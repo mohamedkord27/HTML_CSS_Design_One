@@ -1,0 +1,115 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+/* Start Global Rules */
+body{
+    background: linear-gradient(#111, #222);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    clip-path: circle(40% at right 70%);
+    z-index: -1;
+}
+.container{
+    width: 80%;
+    height: 80%;
+    background-color: rgb(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+/* Start Header */
+.container nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    margin: auto;
+    width: 80%;
+}
+.container nav a.logo{
+    text-decoration: none;
+    color: white;
+    font-size: 32px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+.container nav ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+.container nav ul li a{ 
+    padding: 6px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+.container nav ul li a:hover,
+.container nav ul li a.active{
+    color: #fa0000;
+}
+/* End Header */
+/* Start Content */
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+}
+
+ .content .text {
+    width: 40%;
+}
+.content .text h2{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.content .text p{
+    color: white;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin: 10px 0;
+}
+.content .image{
+    width: 40%;
+}
+.content .image img{
+    width: 400px;
+}  
+@media (max-width:1199px) {
+    .content .image img{
+        width: 235px;
+    }
+}
+@media (max-width:991px) {
+    .content,nav{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .content .text{
+        width: 80%;
+    }
+    body::after{
+        clip-path: circle(50% at bottom);
+    }
+}
+/* End Content */
